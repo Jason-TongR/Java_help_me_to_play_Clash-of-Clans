@@ -196,4 +196,17 @@ public class tools{
     public int generate_random_human_short(){
         return (int)(( ( ( ( random.nextDouble()*100 ) % 10 ) * 0.01 ) + 0.1 )*10000);
     }
+    
+    public void get_Color_of_pixel( int x , int y ){
+        assert x >= 0 && x <= 1920 : "basic on user screen";
+        assert y >= 0 && y <= 1080 : "basic on user screen";
+        Color pixelColor = robot.getPixelColor(x,y);
+        System.out.println( pixelColor.getRed() );
+        System.out.println( pixelColor.getGreen() );
+        System.out.println( pixelColor.getBlue() );
+    }
+    
+    public boolean compare_color( Color our_PixelColor , int aim_red , int aim_green , int aim_blue ){
+        return (our_PixelColor.getRed() == aim_red  &&  our_PixelColor.getGreen() == aim_green  &&  our_PixelColor.getBlue() == aim_blue );
+    }
 }

@@ -156,4 +156,8 @@ public class plug_start{
         
         System.out.println(time + " times over!!");
     }
+    
+    public void day_countryside_shuaqiang(){
+        //need to do.
+    }
 }
