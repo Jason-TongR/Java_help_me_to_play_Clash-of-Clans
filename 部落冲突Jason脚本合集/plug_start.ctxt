@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=plug_start
+comment1.params=
+comment1.target=plug_start()
+comment2.params=time
+comment2.target=void\ start_receving_water_night_countryside(int)
+comment2.text=\r\n\ \ \u5728\u4F7F\u7528\u8FD9\u4E2A\u63D2\u4EF6\u524D\uFF0C\u5148\u5BF9\u597D\u6309\u952E\r\n\ \ parameter\ times\ \u662F\u4F60\u9700\u8981\u5237\u7684\u6B21\u6570\r\n
+comment3.params=time
+comment3.target=void\ start_receving_water_money_day_countryside(int)
+comment3.text=\r\n\ \u5728\u4F7F\u7528\u8FD9\u4E2A\u63D2\u4EF6\u524D\uFF0C\u52A1\u5FC5\u5148\u81EA\u5DF1\u8BBE\u7F6E\u597D\u5168\u90E8\u54E5\u5E03\u6797\u914D\u5175\r\n\ parameter\ times\ \u662F\u4F60\u9700\u8981\u5237\u7684\u6B21\u6570\r\n
+numComments=4

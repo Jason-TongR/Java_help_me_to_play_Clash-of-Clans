@@ -133,13 +133,46 @@ public class tools{
         System.out.println("Release I successfully");
     }
     
+    public void press_release_O_tms(int t){
+        robot.keyPress(KeyEvent.VK_O);
+        System.out.println("press O successfuly");
+        
+        System.out.println("wait " + t + " ms to release O");
+        robot.delay(t);
+        
+        robot.keyRelease(KeyEvent.VK_O);
+        System.out.println("Release O successfully");
+    }
+    
+    public void press_release_P_tms(int t){
+        robot.keyPress(KeyEvent.VK_P);
+        System.out.println("press P successfuly");
+        
+        System.out.println("wait " + t + " ms to release P");
+        robot.delay(t);
+        
+        robot.keyRelease(KeyEvent.VK_P);
+        System.out.println("Release P successfully");
+    }
+    
+    public void press_release_A_tms(int t){
+        robot.keyPress(KeyEvent.VK_A);
+        System.out.println("press A successfuly");
+        
+        System.out.println("wait " + t + " ms to release A");
+        robot.delay(t);
+        
+        robot.keyRelease(KeyEvent.VK_A);
+        System.out.println("Release A successfully");
+    }
+    
     /*
      * this method is move to (x,y) click and release .  e.g. click  -> t -> release  (ms)
      */
     public void move_click_release_mouse_left_tms( int x , int y , int t ){
         robot.mouseMove( x , y );
         
-        robot.delay(t/2);
+        robot.delay( generate_random_number_human_click() );
         
         robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         System.out.println("mouse succesfully click in " + "( " + x + " , " + y + " )");
