@@ -157,7 +157,94 @@ public class plug_start{
         System.out.println(time + " times over!!");
     }
     
-    public void day_countryside_shuaqiang(){
-        //need to do.
+    
+    /**
+     * 在使用这个插件前，务必先自己设置好全部哥布林配兵
+     * 这是主世界无限次刷资源的方法直到金幣滿
+     */
+    public void start_receving_water_money_day_countryside_infini_times_unti_full(){
+        int t = random.nextInt(10000);
+        
+        int time_release_all_GOBOLIN = 40000;   //40000ms
+        System.out.println("wait " + (3000 + t)  + "ms to start!");
+        robot.delay( 3000 + t );//this delay is to wait user to open the game.
+        
+        boolean full = skill.distinguish_whether_jinbi_enough();
+        
+        
+        while(!full){
+            tool.press_release_W_tms(tool.generate_random_number_human_click());    //attack
+        
+            robot.delay(tool.generate_random_human_short());
+        
+            tool.press_release_R_tms(tool.generate_random_number_human_click());    //search fish
+        
+            robot.delay(tool.generate_random_human_short());
+        
+            tool.press_release_O_tms(tool.generate_random_number_human_click());    //begin
+        
+            robot.delay(tool.generate_random_human_wait());
+                    
+            tool.press_release_P_tms(tool.generate_random_number_human_click());    //choose the car
+            
+            tool.move_click_release_mouse_left_tms( 100 , 200 , tool.generate_random_number_human_click() );    //release the car
+            
+            robot.delay(tool.generate_random_human_short());
+            
+            tool.press_release_A_tms(tool.generate_random_number_human_click());    //choose the "tan tiao yao shui"
+            
+            skill.release_green_liqid();
+            
+            robot.delay(tool.generate_random_human_short());
+            
+            tool.press_release_W_tms(tool.generate_random_number_human_click());    //choose GOBOLIN
+        
+            tool.move_click_release_mouse_left_tms( 100 , 200 , time_release_all_GOBOLIN + random.nextInt(1000) );  // release all GOBOLIN . 40000 is enough,but we need add random to be safe.
+        
+            tool.press_release_R_tms(tool.generate_random_number_human_click());    //quit the attack
+            
+            robot.delay(tool.generate_random_human_wait());
+            
+            tool.press_release_T_tms(tool.generate_random_number_human_click());    //concern
+            
+            robot.delay(tool.generate_random_human_short());
+                
+            tool.press_release_Y_tms(tool.generate_random_number_human_click());    //back to country
+            
+            robot.delay(tool.generate_random_human_wait());
+            
+            tool.press_release_Q_tms(tool.generate_random_number_human_click());
+            
+            robot.delay(tool.generate_random_human_short());
+            
+            full = skill.distinguish_whether_jinbi_enough();
+        }
+    }
+    
+    
+    
+    /**
+     * stiil NEED TO DO!!!
+     */
+    public void day_countryside_shuaqiang( int red , int green , int blue ){
+        System.out.println("5s");
+        robot.delay(5000);
+        
+        
+        boolean found = skill.try_find_piexl( red , green , blue );
+    
+        if( !found ){
+            System.out.println("we didn't find the chengqiang");
+            return;
+        }
+        else{
+            robot.delay(tool.generate_random_human_short());
+            
+            tool.press_release_Y_tms(tool.generate_random_number_human_click());
+            
+            robot.delay(tool.generate_random_human_short());
+            
+            tool.press_release_U_tms(tool.generate_random_number_human_click());
+        }
     }
 }

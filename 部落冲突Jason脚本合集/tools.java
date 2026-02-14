@@ -201,12 +201,24 @@ public class tools{
         assert x >= 0 && x <= 1920 : "basic on user screen";
         assert y >= 0 && y <= 1080 : "basic on user screen";
         Color pixelColor = robot.getPixelColor(x,y);
-        System.out.println( pixelColor.getRed() );
-        System.out.println( pixelColor.getGreen() );
-        System.out.println( pixelColor.getBlue() );
+        System.out.println( "the color of " + "(" + x + "," + y + ") is:");
+        System.out.println( "RED: " + pixelColor.getRed() );
+        System.out.println( "GREEN: " + pixelColor.getGreen() );
+        System.out.println( "BLUE: " + pixelColor.getBlue() );
     }
     
-    public boolean compare_color( Color our_PixelColor , int aim_red , int aim_green , int aim_blue ){
-        return (our_PixelColor.getRed() == aim_red  &&  our_PixelColor.getGreen() == aim_green  &&  our_PixelColor.getBlue() == aim_blue );
+    public boolean compare_color( Color our_PixelColor , int aim_red , int aim_green , int aim_blue ){  //not exactly , is a range
+        return ( ( our_PixelColor.getRed() >= aim_red - 5 && our_PixelColor.getRed() <= aim_red + 15 ) && ( our_PixelColor.getGreen() >= aim_green - 15 && our_PixelColor.getGreen() <= aim_green + 15 ) && ( our_PixelColor.getBlue() >= aim_blue - 15 && our_PixelColor.getBlue() <= aim_blue + 15 ) );
+    } 
+    
+    public void get_current_mouse_coordinate_and_pixel(){
+        while(true){
+            PointerInfo pointerInfo = MouseInfo.getPointerInfo();
+            
+            Point point = pointerInfo.getLocation();
+            
+            get_Color_of_pixel(point.x , point.y);
+            
+        }
     }
 }
