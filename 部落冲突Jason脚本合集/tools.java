@@ -166,6 +166,160 @@ public class tools{
         System.out.println("Release A successfully");
     }
     
+    public void press_release_S_tms(int t){
+        robot.keyPress(KeyEvent.VK_S);
+        System.out.println("press S successfuly");
+        
+        System.out.println("wait " + t + " ms to release S");
+        robot.delay(t);
+        
+        robot.keyRelease(KeyEvent.VK_S);
+        System.out.println("Release S successfully");
+    }
+    
+    public void press_release_D_tms(int t){
+        robot.keyPress(KeyEvent.VK_D);
+        System.out.println("press D successfuly");
+        
+        System.out.println("wait " + t + " ms to release D");
+        robot.delay(t);
+        
+        robot.keyRelease(KeyEvent.VK_D);
+        System.out.println("Release D successfully");
+    }
+    
+    public void press_release_F_tms(int t){
+        robot.keyPress(KeyEvent.VK_F);
+        System.out.println("press F successfuly");
+        
+        System.out.println("wait " + t + " ms to release F");
+        robot.delay(t);
+        
+        robot.keyRelease(KeyEvent.VK_F);
+        System.out.println("Release F successfully");
+    }
+    
+    public void press_release_G_tms(int t){
+        robot.keyPress(KeyEvent.VK_G);
+        System.out.println("press G successfuly");
+        
+        System.out.println("wait " + t + " ms to release G");
+        robot.delay(t);
+        
+        robot.keyRelease(KeyEvent.VK_G);
+        System.out.println("Release G successfully");
+    }
+    
+    public void press_release_H_tms(int t){
+        robot.keyPress(KeyEvent.VK_H);
+        System.out.println("press H successfuly");
+        
+        System.out.println("wait " + t + " ms to release H");
+        robot.delay(t);
+        
+        robot.keyRelease(KeyEvent.VK_H);
+        System.out.println("Release H successfully");
+    }
+    
+    public void press_release_J_tms(int t){
+        robot.keyPress(KeyEvent.VK_J);
+        System.out.println("press J successfuly");
+        
+        System.out.println("wait " + t + " ms to release J");
+        robot.delay(t);
+        
+        robot.keyRelease(KeyEvent.VK_J);
+        System.out.println("Release J successfully");
+    }
+    
+    public void press_release_Z_tms(int t){
+        robot.keyPress(KeyEvent.VK_Z);
+        System.out.println("press Z successfuly");
+        
+        System.out.println("wait " + t + " ms to release Z");
+        robot.delay(t);
+        
+        robot.keyRelease(KeyEvent.VK_Z);
+        System.out.println("Release Z successfully");
+    }
+    
+    public void press_release_X_tms(int t){
+        robot.keyPress(KeyEvent.VK_X);
+        System.out.println("press X successfuly");
+        
+        System.out.println("wait " + t + " ms to release X");
+        robot.delay(t);
+        
+        robot.keyRelease(KeyEvent.VK_X);
+        System.out.println("Release X successfully");
+    }
+    
+    public void press_release_C_tms(int t){
+        robot.keyPress(KeyEvent.VK_C);
+        System.out.println("press C successfuly");
+        
+        System.out.println("wait " + t + " ms to release C");
+        robot.delay(t);
+        
+        robot.keyRelease(KeyEvent.VK_C);
+        System.out.println("Release C successfully");
+    }
+    
+    public void press_release_V_tms(int t){
+        robot.keyPress(KeyEvent.VK_V);
+        System.out.println("press V successfuly");
+        
+        System.out.println("wait " + t + " ms to release V");
+        robot.delay(t);
+        
+        robot.keyRelease(KeyEvent.VK_V);
+        System.out.println("Release V successfully");
+    }
+    
+    public void press_release_B_tms(int t){
+        robot.keyPress(KeyEvent.VK_B);
+        System.out.println("press B successfuly");
+        
+        System.out.println("wait " + t + " ms to release B");
+        robot.delay(t);
+        
+        robot.keyRelease(KeyEvent.VK_B);
+        System.out.println("Release B successfully");
+    }
+    
+    public void press_release_N_tms(int t){
+        robot.keyPress(KeyEvent.VK_N);
+        System.out.println("press N successfuly");
+        
+        System.out.println("wait " + t + " ms to release N");
+        robot.delay(t);
+        
+        robot.keyRelease(KeyEvent.VK_N);
+        System.out.println("Release N successfully");
+    }
+    
+    public void press_release_M_tms(int t){
+        robot.keyPress(KeyEvent.VK_M);
+        System.out.println("press M successfuly");
+        
+        System.out.println("wait " + t + " ms to release M");
+        robot.delay(t);
+        
+        robot.keyRelease(KeyEvent.VK_M);
+        System.out.println("Release M successfully");
+    }
+    
+    public void press_release_K_tms(int t){
+        robot.keyPress(KeyEvent.VK_K);
+        System.out.println("press K successfuly");
+        
+        System.out.println("wait " + t + " ms to release K");
+        robot.delay(t);
+        
+        robot.keyRelease(KeyEvent.VK_K);
+        System.out.println("Release K successfully");
+    }
+    
     /*
      * this method is move to (x,y) click and release .  e.g. click  -> t -> release  (ms)
      */
