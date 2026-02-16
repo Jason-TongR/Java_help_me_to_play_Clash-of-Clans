@@ -97,7 +97,7 @@ public class plug_start{
      * 在使用这个插件前，务必先自己设置好全部哥布林配兵
      * parameter times 是你需要刷的次数
      */
-    public void start_receving_water_money_day_countryside( int time ){
+    public void start_receving_source_day_countryside( int time ){
         assert time >=1 : "刷的次数必须大于等于1";
         
         
@@ -160,16 +160,16 @@ public class plug_start{
     
     /**
      * 在使用这个插件前，务必先自己设置好全部哥布林配兵
-     * 这是主世界无限次刷资源的方法直到金幣滿
+     * 这是主世界无限次刷资源的方法直到金幣和圣水滿
      */
-    public void start_receving_water_money_day_countryside_infini_times_unti_jinbi_full(){
+    public void start_receving_source_day_countryside_infini_times_unti_jinbi_shengshui_full(){
         int t = random.nextInt(10000);
         
         int time_release_all_GOBOLIN = 40000;   //40000ms
         System.out.println("wait " + (3000 + t)  + "ms to start!");
         robot.delay( 3000 + t );//this delay is to wait user to open the game.
         
-        boolean full = skill.distinguish_whether_jinbi_enough();
+        boolean full = ( skill.distinguish_whether_jinbi_enough() && skill.distinguish_whether_shengshui_enough() );
         
         
         while(!full){
@@ -217,21 +217,21 @@ public class plug_start{
             
             robot.delay(tool.generate_random_human_short());
             
-            full = skill.distinguish_whether_jinbi_enough();
+            full = ( skill.distinguish_whether_jinbi_enough() && skill.distinguish_whether_shengshui_enough() );
         }
     }
     
     /**
-     * 这个方法可以刷满金币，然后自动帮你刷预设好的城墙阵型
+     * 这个方法可以刷满金币和圣水，然后自动帮你刷预设好的城墙阵型
      */
-    public void start_receving_water_money_day_countryside_infini_times_unti_jinbi_full_and_shuaqiang(){
+    public void start_receving_source_day_countryside_infini_times_unti_source_full_and_shuaqiang(){
         int t = random.nextInt(10000);
         
         int time_release_all_GOBOLIN = 40000;   //40000ms
         System.out.println("wait " + (3000 + t)  + "ms to start!");
         robot.delay( 3000 + t );//this delay is to wait user to open the game.
         
-        boolean full = skill.distinguish_whether_jinbi_enough();
+        boolean full = ( skill.distinguish_whether_jinbi_enough() && skill.distinguish_whether_shengshui_enough() );
         
         int shua_times = 0;
         
@@ -282,10 +282,12 @@ public class plug_start{
             
                 robot.delay(tool.generate_random_human_short());
             
-                full = skill.distinguish_whether_jinbi_enough();
+                full = ( skill.distinguish_whether_jinbi_enough() && skill.distinguish_whether_shengshui_enough() );
             }
         
             if(shua_times == 0){
+                //用金币刷第一排城墙
+
                 tool.press_release_Z_tms(tool.generate_random_number_human_click());    //choose the chengqiang.
             
                 robot.delay(tool.generate_random_human_short());
@@ -303,31 +305,30 @@ public class plug_start{
                 robot.delay(tool.generate_random_human_short());
             
                 shua_times++;
+                
+                //用圣水刷第二排城墙
+                
+                tool.press_release_X_tms(tool.generate_random_number_human_click());    //choose the chengqiang.
+                    
+                robot.delay(tool.generate_random_human_short());
+                
+                tool.press_release_N_tms(tool.generate_random_number_human_click());    //choose zhenghang.
+                
+                robot.delay(tool.generate_random_human_short());
+                    
+                tool.press_release_Y_tms(tool.generate_random_number_human_click());    //shengji
+                    
+                robot.delay(tool.generate_random_human_short());
+                    
+                tool.press_release_T_tms(tool.generate_random_number_human_click());    //concern
+                    
+                robot.delay(tool.generate_random_human_short());
+                    
+                shua_times++;
             }
-            else{
-        
-                if(shua_times == 1){
-                    tool.press_release_X_tms(tool.generate_random_number_human_click());    //choose the chengqiang.
-                    
-                    robot.delay(tool.generate_random_human_short());
-                
-                    tool.press_release_N_tms(tool.generate_random_number_human_click());    //choose zhenghang.
-                
-                    robot.delay(tool.generate_random_human_short());
-                    
-                    tool.press_release_K_tms(tool.generate_random_number_human_click());    //shengji
-                    
-                    robot.delay(tool.generate_random_human_short());
-                    
-                    tool.press_release_T_tms(tool.generate_random_number_human_click());    //concern
-                    
-                    robot.delay(tool.generate_random_human_short());
-                    
-                    shua_times++;
-                }
-                else{
-            
+            else{        
                     if(shua_times == 2){
+                        //第一排
                         tool.press_release_C_tms(tool.generate_random_number_human_click());    //choose the chengqiang.
                         
                         robot.delay(tool.generate_random_human_short());
@@ -345,31 +346,28 @@ public class plug_start{
                         robot.delay(tool.generate_random_human_short());
                         
                         shua_times++;
+                        //第二排
+                        tool.press_release_V_tms(tool.generate_random_number_human_click());    //choose the chengqiang.
+                    
+                        robot.delay(tool.generate_random_human_short());
+                
+                        tool.press_release_N_tms(tool.generate_random_number_human_click());    //choose zhenghang.
+                
+                        robot.delay(tool.generate_random_human_short());
+                    
+                        tool.press_release_Y_tms(tool.generate_random_number_human_click());    //shengji
+                    
+                        robot.delay(tool.generate_random_human_short());
+                    
+                        tool.press_release_T_tms(tool.generate_random_number_human_click());    //concern
+                    
+                        robot.delay(tool.generate_random_human_short());
+                    
+                        shua_times++;
                     }
                     else{
-                
-                        if(shua_times == 3){
-                            tool.press_release_V_tms(tool.generate_random_number_human_click());    //choose the chengqiang.
-                            
-                            robot.delay(tool.generate_random_human_short());
-                            
-                            tool.press_release_N_tms(tool.generate_random_number_human_click());    //choose zhenghang.
-                            
-                            robot.delay(tool.generate_random_human_short());
-                            
-                            tool.press_release_K_tms(tool.generate_random_number_human_click());    //shengji
-                            
-                            robot.delay(tool.generate_random_human_short());
-                            
-                            tool.press_release_T_tms(tool.generate_random_number_human_click());    //concern
-                            
-                            robot.delay(tool.generate_random_human_short());
-                            
-                            shua_times++;
-                        }
-                        else{
-                        
                             if(shua_times == 4){
+                                //第一排
                                 tool.press_release_B_tms(tool.generate_random_number_human_click());    //choose the chengqiang.
                                 
                                 robot.delay(tool.generate_random_human_short());
@@ -387,31 +385,28 @@ public class plug_start{
                                 robot.delay(tool.generate_random_human_short());
                                 
                                 shua_times++;
+                                //第二排
+                                tool.press_release_N_tms(tool.generate_random_number_human_click());    //choose the chengqiang.
+                    
+                                robot.delay(tool.generate_random_human_short());
+                            
+                                tool.press_release_N_tms(tool.generate_random_number_human_click());    //choose zhenghang.
+                            
+                                robot.delay(tool.generate_random_human_short());
+                                
+                                tool.press_release_Y_tms(tool.generate_random_number_human_click());    //shengji
+                                
+                                robot.delay(tool.generate_random_human_short());
+                                
+                                tool.press_release_T_tms(tool.generate_random_number_human_click());    //concern
+                                
+                                robot.delay(tool.generate_random_human_short());
+                                
+                                shua_times++;
                             }
                             else{
-                            
-                                if(shua_times == 5){
-                                    tool.press_release_N_tms(tool.generate_random_number_human_click());    //choose the chengqiang.
-                                    
-                                    robot.delay(tool.generate_random_human_short());
-                                    
-                                    tool.press_release_N_tms(tool.generate_random_number_human_click());    //choose zhenghang.
-                                    
-                                    robot.delay(tool.generate_random_human_short());
-                                    
-                                    tool.press_release_K_tms(tool.generate_random_number_human_click());    //shengji
-                                    
-                                    robot.delay(tool.generate_random_human_short());
-                                    
-                                    tool.press_release_T_tms(tool.generate_random_number_human_click());    //concern
-                                    
-                                    robot.delay(tool.generate_random_human_short());
-                                    
-                                    shua_times++;
-                                }
-                                else{
-                                
                                     if(shua_times == 6){
+                                        //第一排
                                         tool.press_release_M_tms(tool.generate_random_number_human_click());    //choose the chengqiang.
                                         
                                         robot.delay(tool.generate_random_human_short());
@@ -429,31 +424,28 @@ public class plug_start{
                                         robot.delay(tool.generate_random_human_short());
                                         
                                         shua_times++;
+                                        //第二排
+                                        tool.press_release_S_tms(tool.generate_random_number_human_click());    //choose the chengqiang.
+                    
+                                        robot.delay(tool.generate_random_human_short());
+                                    
+                                        tool.press_release_N_tms(tool.generate_random_number_human_click());    //choose zhenghang.
+                                    
+                                        robot.delay(tool.generate_random_human_short());
+                                        
+                                        tool.press_release_Y_tms(tool.generate_random_number_human_click());    //shengji
+                                        
+                                        robot.delay(tool.generate_random_human_short());
+                                        
+                                        tool.press_release_T_tms(tool.generate_random_number_human_click());    //concern
+                                        
+                                        robot.delay(tool.generate_random_human_short());
+                                        
+                                        shua_times++;
                                     }
                                     else{
-                                    
-                                        if(shua_times == 7){
-                                            tool.press_release_S_tms(tool.generate_random_number_human_click());    //choose the chengqiang.
-                                            
-                                            robot.delay(tool.generate_random_human_short());
-                                            
-                                            tool.press_release_N_tms(tool.generate_random_number_human_click());    //choose zhenghang.
-                                            
-                                            robot.delay(tool.generate_random_human_short());
-                                            
-                                            tool.press_release_K_tms(tool.generate_random_number_human_click());    //shengji
-                                            
-                                            robot.delay(tool.generate_random_human_short());
-                                            
-                                            tool.press_release_T_tms(tool.generate_random_number_human_click());    //concern
-                                            
-                                            robot.delay(tool.generate_random_human_short());
-                                            
-                                            shua_times++;
-                                        }
-                                        else{
-                                        
                                             if(shua_times == 8){
+                                                //第一排
                                                 tool.press_release_D_tms(tool.generate_random_number_human_click());    //choose the chengqiang.
                                                 
                                                 robot.delay(tool.generate_random_human_short());
@@ -471,31 +463,28 @@ public class plug_start{
                                                 robot.delay(tool.generate_random_human_short());
                                                 
                                                 shua_times++;
+                                                //第二排
+                                                tool.press_release_F_tms(tool.generate_random_number_human_click());    //choose the chengqiang.
+                    
+                                                robot.delay(tool.generate_random_human_short());
+                                            
+                                                tool.press_release_N_tms(tool.generate_random_number_human_click());    //choose zhenghang.
+                                            
+                                                robot.delay(tool.generate_random_human_short());
+                                                
+                                                tool.press_release_Y_tms(tool.generate_random_number_human_click());    //shengji
+                                                
+                                                robot.delay(tool.generate_random_human_short());
+                                                
+                                                tool.press_release_T_tms(tool.generate_random_number_human_click());    //concern
+                                                
+                                                robot.delay(tool.generate_random_human_short());
+                                                
+                                                shua_times++;
                                             }
                                             else{
-                                            
-                                                if(shua_times == 9){
-                                                    tool.press_release_F_tms(tool.generate_random_number_human_click());    //choose the chengqiang.
-                                                    
-                                                    robot.delay(tool.generate_random_human_short());
-                                                    
-                                                    tool.press_release_N_tms(tool.generate_random_number_human_click());    //choose zhenghang.
-                                                    
-                                                    robot.delay(tool.generate_random_human_short());
-                                                    
-                                                    tool.press_release_K_tms(tool.generate_random_number_human_click());    //shengji
-                                                    
-                                                    robot.delay(tool.generate_random_human_short());
-                                                    
-                                                    tool.press_release_T_tms(tool.generate_random_number_human_click());    //concern
-                                                    
-                                                    robot.delay(tool.generate_random_human_short());
-                                                    
-                                                    shua_times++;
-                                                }
-                                                else{
-                                                
                                                     if(shua_times == 10){
+                                                        //第一排
                                                         tool.press_release_G_tms(tool.generate_random_number_human_click());    //choose the chengqiang.
                                                         
                                                         robot.delay(tool.generate_random_human_short());
@@ -513,31 +502,28 @@ public class plug_start{
                                                         robot.delay(tool.generate_random_human_short());
                                                         
                                                         shua_times++;
+                                                        //第二排
+                                                        tool.press_release_H_tms(tool.generate_random_number_human_click());    //choose the chengqiang.
+                    
+                                                        robot.delay(tool.generate_random_human_short());
+                                                    
+                                                        tool.press_release_N_tms(tool.generate_random_number_human_click());    //choose zhenghang.
+                                                    
+                                                        robot.delay(tool.generate_random_human_short());
+                                                        
+                                                        tool.press_release_Y_tms(tool.generate_random_number_human_click());    //shengji
+                                                        
+                                                        robot.delay(tool.generate_random_human_short());
+                                                        
+                                                        tool.press_release_T_tms(tool.generate_random_number_human_click());    //concern
+                                                        
+                                                        robot.delay(tool.generate_random_human_short());
+                                                        
+                                                        shua_times++;
                                                     }
                                                     else{
-                                                    
-                                                        if(shua_times == 11){
-                                                            tool.press_release_H_tms(tool.generate_random_number_human_click());    //choose the chengqiang.
-                                                            
-                                                            robot.delay(tool.generate_random_human_short());
-                                                            
-                                                            tool.press_release_N_tms(tool.generate_random_number_human_click());    //choose zhenghang.
-                                                            
-                                                            robot.delay(tool.generate_random_human_short());
-                                                            
-                                                            tool.press_release_K_tms(tool.generate_random_number_human_click());    //shengji
-                                                            
-                                                            robot.delay(tool.generate_random_human_short());
-                                                            
-                                                            tool.press_release_T_tms(tool.generate_random_number_human_click());    //concern
-                                                            
-                                                            robot.delay(tool.generate_random_human_short());
-                                                            
-                                                            shua_times++;
-                                                        }
-                                                        else{
-                                                        
                                                             if(shua_times == 12){
+                                                                //第一排
                                                                 tool.press_release_A_tms(tool.generate_random_number_human_click());    //choose the chengqiang.
                                                                 
                                                                 robot.delay(tool.generate_random_human_short());
@@ -555,44 +541,34 @@ public class plug_start{
                                                                 robot.delay(tool.generate_random_human_short());
                                                                 
                                                                 shua_times++;
-                                                            }
-                                                            else{
+                                                                //第二排
+                                                                tool.press_release_J_tms(tool.generate_random_number_human_click());    //choose the chengqiang.
+                    
+                                                                robot.delay(tool.generate_random_human_short());
                                                             
-                                                                if(shua_times == 13){
-                                                                    tool.press_release_J_tms(tool.generate_random_number_human_click());    //choose the chengqiang.
-                                                                    
-                                                                    robot.delay(tool.generate_random_human_short());
-                                                                    
-                                                                    tool.press_release_N_tms(tool.generate_random_number_human_click());    //choose zhenghang.
-                                                                    
-                                                                    robot.delay(tool.generate_random_human_short());
-                                                                    
-                                                                    tool.press_release_K_tms(tool.generate_random_number_human_click());    //shengji
-                                                                    
-                                                                    robot.delay(tool.generate_random_human_short());
-                                                                    
-                                                                    tool.press_release_T_tms(tool.generate_random_number_human_click());    //concern
-                                                                    
-                                                                    robot.delay(tool.generate_random_human_short());
-                                                                    
-                                                                    shua_times++;
-                                                                }
+                                                                tool.press_release_N_tms(tool.generate_random_number_human_click());    //choose zhenghang.
+                                                            
+                                                                robot.delay(tool.generate_random_human_short());
+                                                                
+                                                                tool.press_release_Y_tms(tool.generate_random_number_human_click());    //shengji
+                                                                
+                                                                robot.delay(tool.generate_random_human_short());
+                                                                
+                                                                tool.press_release_T_tms(tool.generate_random_number_human_click());    //concern
+                                                                
+                                                                robot.delay(tool.generate_random_human_short());
+                                                                
+                                                                shua_times++;
                                                             }
-                                                        }
                                                     }
-                                                }
                                             }
-                                        }
                                     }
-                                }
                             }
-                        }
                     }
-                }
             }
             
             
-            full = skill.distinguish_whether_jinbi_enough();
+            full = ( skill.distinguish_whether_jinbi_enough() && skill.distinguish_whether_shengshui_enough() );
         }
         
         System.out.println("finish shuaqiang!");
