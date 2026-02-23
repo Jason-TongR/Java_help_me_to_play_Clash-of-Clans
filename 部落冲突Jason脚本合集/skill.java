@@ -51,6 +51,14 @@ public class skill{
         return ( tool.compare_color( shengshui_enough_piexl , 226 , 145 , 226 ) );
     }
     
+    public boolean distinguish_whether_heiyou_enough(){
+        Color heiyou_enough_piexl = robot.getPixelColor(1601,252);  //(1601,252) is the enough space.
+        System.out.println(heiyou_enough_piexl.getRed());
+        System.out.println(heiyou_enough_piexl.getGreen());
+        System.out.println(heiyou_enough_piexl.getBlue());
+        
+        return ( tool.compare_color( heiyou_enough_piexl , 145 , 132 , 152 ) );
+    }
     
     /**
      * still need TO DO !!!

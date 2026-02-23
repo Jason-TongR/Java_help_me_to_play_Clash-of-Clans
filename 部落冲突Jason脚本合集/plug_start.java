@@ -160,16 +160,16 @@ public class plug_start{
     
     /**
      * 在使用这个插件前，务必先自己设置好全部哥布林配兵
-     * 这是主世界无限次刷资源的方法直到金幣和圣水滿
+     * 这是主世界无限次刷资源的方法直到金幣和圣水和黑油滿
      */
-    public void start_receving_source_day_countryside_infini_times_unti_jinbi_shengshui_full(){
+    public void start_receving_source_day_countryside_infini_times_unti_source_full(){
         int t = random.nextInt(10000);
         
         int time_release_all_GOBOLIN = 40000;   //40000ms
         System.out.println("wait " + (3000 + t)  + "ms to start!");
         robot.delay( 3000 + t );//this delay is to wait user to open the game.
         
-        boolean full = ( skill.distinguish_whether_jinbi_enough() && skill.distinguish_whether_shengshui_enough() );
+        boolean full = ( skill.distinguish_whether_jinbi_enough() && skill.distinguish_whether_shengshui_enough() && skill.distinguish_whether_heiyou_enough() );
         
         
         while(!full){
@@ -217,7 +217,7 @@ public class plug_start{
             
             robot.delay(tool.generate_random_human_short());
             
-            full = ( skill.distinguish_whether_jinbi_enough() && skill.distinguish_whether_shengshui_enough() );
+            full = ( skill.distinguish_whether_jinbi_enough() && skill.distinguish_whether_shengshui_enough() && skill.distinguish_whether_heiyou_enough() );
         }
     }
     
