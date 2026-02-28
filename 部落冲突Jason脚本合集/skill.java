@@ -35,29 +35,30 @@ public class skill{
     
     public boolean distinguish_whether_jinbi_enough(){
         Color jinbi_enough_piexl = robot.getPixelColor(1514,92);  //(1514,92) is the enough space.
-        System.out.println(jinbi_enough_piexl.getRed());
-        System.out.println(jinbi_enough_piexl.getGreen());
-        System.out.println(jinbi_enough_piexl.getBlue());
         
         return ( tool.compare_color( jinbi_enough_piexl , 244 , 220 , 114 ) );
     }
     
     public boolean distinguish_whether_shengshui_enough(){
         Color shengshui_enough_piexl = robot.getPixelColor(1511,173);  //(1511,173) is the enough space.
-        System.out.println(shengshui_enough_piexl.getRed());
-        System.out.println(shengshui_enough_piexl.getGreen());
-        System.out.println(shengshui_enough_piexl.getBlue());
         
         return ( tool.compare_color( shengshui_enough_piexl , 226 , 145 , 226 ) );
     }
     
     public boolean distinguish_whether_heiyou_enough(){
         Color heiyou_enough_piexl = robot.getPixelColor(1601,252);  //(1601,252) is the enough space.
-        System.out.println(heiyou_enough_piexl.getRed());
-        System.out.println(heiyou_enough_piexl.getGreen());
-        System.out.println(heiyou_enough_piexl.getBlue());
-        
+
         return ( tool.compare_color( heiyou_enough_piexl , 145 , 132 , 152 ) );
+    }
+
+    /**
+     * STILL NEED TO FINISH!!!!
+     * the enough piexl corrdinate and the color of the enough pixel.
+     */
+    public boolean distinguish_whether_night_country_shengshui_enough(){
+        Color shengshui_enough_piexl = robot.getPixelColor(1,1);
+
+        return ( tool.compare_color( shengshui_enough_piexl , 1 , 1 , 1 ) );   
     }
     
     /**

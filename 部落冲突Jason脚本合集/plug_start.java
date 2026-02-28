@@ -92,6 +92,61 @@ public class plug_start{
         System.out.println(time + " times over!!");
     }
     
+    /**
+     *这个插件是可以帮你刷夜世界的圣水，直到圣水罐爆满就停止
+     */
+    public void start_receving_water_night_countryside_until_full(){
+        int t = random.nextInt(10000);
+        System.out.println("wait " + (3000 + t)  + "ms to start!");
+        robot.delay( 3000+t );//this delay is to wait user to open the game.
+
+        boolean full = skill.ditinguish_whether_night_country_shengshui_enough();
+        
+        while( !full ){
+            tool.press_release_W_tms(tool.generate_random_number_human_click());    //atack
+            
+            robot.delay(tool.generate_random_human_short());
+            
+            tool.press_release_E_tms(tool.generate_random_number_human_click());    //search
+            
+            robot.delay(tool.generate_random_human_wait());
+            
+            tool.press_release_W_tms(tool.generate_random_number_human_click());
+            
+            robot.delay(tool.generate_random_human_short());
+            
+            tool.move_click_release_mouse_left_tms( 300 , 450 , tool.generate_random_human_short() );
+            
+            robot.delay(tool.generate_random_human_short());
+            
+            tool.press_release_R_tms(tool.generate_random_number_human_click());    //quit the attack
+            
+            robot.delay(tool.generate_random_human_wait());
+            
+            tool.press_release_T_tms(tool.generate_random_number_human_click());    //concern
+            
+            robot.delay(tool.generate_random_human_short());
+            
+            tool.press_release_Y_tms(tool.generate_random_number_human_click());    //back to country
+            
+            robot.delay(tool.generate_random_human_wait());
+            
+            tool.press_release_Q_tms(tool.generate_random_number_human_click());    //open the water cart
+            
+            robot.delay(tool.generate_random_human_short());
+            
+            tool.press_release_U_tms(tool.generate_random_number_human_click());    //get the water
+            
+            robot.delay(tool.generate_random_human_short());
+                
+            tool.press_release_Q_tms(tool.generate_random_number_human_click());    //quit the cart
+            
+            robot.delay(tool.generate_random_human_short());
+
+            full = skill.distinguish_whether_night_country_shengshui_enough();
+        }
+        
+    }
     
     /**
      * 在使用这个插件前，务必先自己设置好全部哥布林配兵
@@ -305,7 +360,7 @@ public class plug_start{
                 robot.delay(tool.generate_random_human_short());
             
                 shua_times++;
-                
+
                 //用圣水刷第二排城墙
                 
                 tool.press_release_X_tms(tool.generate_random_number_human_click());    //choose the chengqiang.
