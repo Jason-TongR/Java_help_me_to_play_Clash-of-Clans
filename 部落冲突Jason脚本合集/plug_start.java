@@ -100,7 +100,7 @@ public class plug_start{
         System.out.println("wait " + (3000 + t)  + "ms to start!");
         robot.delay( 3000+t );//this delay is to wait user to open the game.
 
-        boolean full = skill.ditinguish_whether_night_country_shengshui_enough();
+        boolean full = skill.distinguish_whether_night_country_shengshui_enough();
         
         while( !full ){
             tool.press_release_W_tms(tool.generate_random_number_human_click());    //atack
