@@ -1,12 +1,12 @@
 #BlueJ package file
-dependency1.from=skill
+dependency1.from=plug_start
 dependency1.to=tools
 dependency1.type=UsesDependency
 dependency2.from=plug_start
-dependency2.to=tools
+dependency2.to=skill
 dependency2.type=UsesDependency
-dependency3.from=plug_start
-dependency3.to=skill
+dependency3.from=skill
+dependency3.to=tools
 dependency3.type=UsesDependency
 editor.fx.0.height=1096
 editor.fx.0.width=1936
@@ -18,8 +18,8 @@ package.divider.horizontal=0.6004415011037527
 package.divider.vertical=0.5456919060052219
 package.editor.height=411
 package.editor.width=803
-package.editor.x=458
-package.editor.y=158
+package.editor.x=335
+package.editor.y=84
 package.frame.height=866
 package.frame.width=942
 package.numDependencies=3

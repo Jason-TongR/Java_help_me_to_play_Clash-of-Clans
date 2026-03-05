@@ -51,14 +51,10 @@ public class skill{
         return ( tool.compare_color( heiyou_enough_piexl , 145 , 132 , 152 ) );
     }
 
-    /**
-     * STILL NEED TO FINISH!!!!
-     * the enough piexl corrdinate and the color of the enough pixel.
-     */
     public boolean distinguish_whether_night_country_shengshui_enough(){
-        Color shengshui_enough_piexl = robot.getPixelColor(1,1);
+        Color shengshui_enough_piexl = robot.getPixelColor(1513,172);
 
-        return ( tool.compare_color( shengshui_enough_piexl , 1 , 1 , 1 ) );   
+        return ( tool.compare_color( shengshui_enough_piexl , 178 , 147 , 223 ) );   
     }
     
     /**
